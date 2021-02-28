@@ -6,11 +6,11 @@ public enum DepthFirstTraversal {
   case postOrder
 }
 
-public extension Tree where Children == BinaryChildren<Element> {
+public extension Tree where Descendent == BinaryChildren<Element> {
   func traverse(
     initialPath: [Element] = [],
     method: DepthFirstTraversal,
-    visit: @escaping (Element, [Element]) -> ()
+    visit: @escaping (Element, [Element]) -> Void
   ) {
     guard case let .node(value: value, children) = self else { return }
     let path = initialPath + [value]

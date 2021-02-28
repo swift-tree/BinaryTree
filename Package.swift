@@ -7,18 +7,21 @@ let package = Package(
   products: [
     .library(
       name: "BinaryTree",
-      targets: ["BinaryTree"]),
+      targets: ["BinaryTree"]
+    ),
   ],
   dependencies: [
     .package(path: "../Tree"),
-  //  .package(url: "https://github.com/erkekin/Tree.git", .exact("0.1.7"))
+    //  .package(url: "https://github.com/erkekin/Tree.git", .exact("0.1.7"))
   ],
   targets: [
     .target(
       name: "BinaryTree",
-      dependencies: ["Tree"]),
+      dependencies: ["Tree"]
+    ),
     .testTarget(
       name: "BinaryTreeTests",
-      dependencies: ["BinaryTree", "Tree"]),
+      dependencies: ["BinaryTree", "Tree"]
+    ),
   ]
 )
