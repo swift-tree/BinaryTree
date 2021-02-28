@@ -6,7 +6,7 @@ public enum DepthFirstTraversal {
   case postOrder
 }
 
-public extension Tree where Descendent == BinaryChildren<Element> {
+public extension BinaryTree where Descendent == BinaryChildren<Element> {
   func traverse(
     initialPath: [Element] = [],
     method: DepthFirstTraversal,
