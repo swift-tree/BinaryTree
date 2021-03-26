@@ -37,6 +37,19 @@ final class BinaryTreeTests: XCTestCase {
     super.tearDown()
   }
 
+  func test_builder_init() {
+    XCTAssertEqual(
+      BinaryTree(5) {
+        BinaryTree<Int>.empty
+        BinaryTree(10) {
+          BinaryTree(6)
+          BinaryTree(15)
+        }
+      } ,
+      tree
+    )
+  }
+
   func test_traversals_preOrder() {
     tree.traverse(method: .preOrder) { [unowned self] value, _ in
       self.capturedItems.append(value)
