@@ -8,12 +8,12 @@ public enum DepthFirstTraversal {
 
 public extension BinaryTree where Descendent == BinaryChildren<Element> {
   func traverse(
-    initialPath: [Element] = [],
+    initialPath: LinkedList<Element> = .empty,
     method: DepthFirstTraversal,
-    visit: @escaping (Element, [Element]) -> Void
+    visit: @escaping (Element, LinkedList<Element>) -> Void
   ) {
     guard case let .node(value: value, children) = self else { return }
-    let path = initialPath + [value]
+    let path = initialPath.insert(value)
     switch method {
     case .preOrder:
       visit(value, path)

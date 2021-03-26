@@ -2,7 +2,7 @@ import Tree
 
 @_functionBuilder
 public enum BinaryTreeBuilder<T> {
-  public static func buildBlock(_ left: Tree<T, BinaryChildren<T>>, _ right: Tree<T, BinaryChildren<T>>) -> BinaryChildren<T> {
+  public static func buildBlock(_ left: BinaryTree<T>, _ right: BinaryTree<T>) -> BinaryChildren<T> {
     .init(left, right)
   }
 

@@ -39,14 +39,14 @@ final class BinaryTreeTests: XCTestCase {
 
   func test_builder_init() {
     XCTAssertEqual(
+      tree,
       BinaryTree(5) {
         BinaryTree<Int>.empty
         BinaryTree(10) {
           BinaryTree(6)
           BinaryTree(15)
         }
-      },
-      tree
+      }
     )
   }
 
