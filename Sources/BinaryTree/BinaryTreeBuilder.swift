@@ -1,6 +1,6 @@
 import Tree
 
-@_functionBuilder
+@resultBuilder
 public enum BinaryTreeBuilder<T> {
   public static func buildBlock(_ left: BinaryTree<T>, _ right: BinaryTree<T>) -> BinaryChildren<T> {
     .init(left, right)
