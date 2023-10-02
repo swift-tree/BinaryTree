@@ -83,6 +83,16 @@ final class BinaryTreeTests: XCTestCase {
 
     XCTAssertEqual(tree.height, 0)
   }
+  
+  func test_print() {
+    XCTAssertEqual("\(tree.description)", """
+              ┌── 15
+          ┌── 10
+              └── 6
+      ┌── 5
+
+      """)
+  }
 
   static var allTests = [
     ("test_height_emtpy", test_height_emtpy),
@@ -90,5 +100,6 @@ final class BinaryTreeTests: XCTestCase {
     ("test_traversals_inOrder", test_traversals_inOrder),
     ("test_traversals_postOrder", test_traversals_postOrder),
     ("test_traversals_preOrder", test_traversals_preOrder),
+    ("test_print", test_print),
   ]
 }
